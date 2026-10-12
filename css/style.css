@@ -1,0 +1,1052 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Cairo", Tahoma, Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #1b2941;
+    font-size: 13px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+}
+section {
+    scroll-margin-top: 20px;
+}
+/* *************************** */
+
+.page {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+/* *************************** */
+   /* 3 - القائمة الجانبية */
+
+
+.sidebar {
+    background: #ffffff;
+    border-left: 1px solid #e7ebf2;
+    padding: 25px 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+
+/* *************************** */
+/* الشعار */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 8px;
+}
+
+.logo-icon,
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2f67e8;
+    color: white;
+    font-size: 25px;
+    border-radius: 12px;
+    width: 45px;
+    height: 45px;
+}
+
+.logo h2 {
+    font-size: 23px;
+    line-height: 1.4;
+}
+
+.logo p,
+.header-title p {
+    color: #92a0b3;
+    font-size: 10px;
+}
+/* *************************** */
+/* القائمة الرئيسية */
+.side-links {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.side-links a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 15px;
+    border-radius: 10px;
+    color: #617088;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.side-links a:hover,
+.side-links a.active {
+    background: #eaf1ff;
+    color: #2562df;
+}
+
+.side-icon {
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    width: 24px;
+    text-align: center;
+}
+/* *************************** */
+/* أزرار الإجراءات السريعة في أسفل القائمة */
+.quick-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quick-actions h3 {
+    color: #65738b;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.action {
+    border: none;
+    border-radius: 10px;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.action span {
+    font-size: 22px;
+    width: 30px;
+    text-align: center;
+}
+
+.action-blue { color: #2460d6; background: #edf3ff; }
+.action-green { color: #138e64; background: #eaf8f1; }
+.action-purple { color: #8544c4; background: #f5efff; }
+.action-red { color: #c8455a; background: #fff0f2; }
+
+.action:hover {
+    filter: brightness(0.97);
+}
+
+/* *************************** */
+/* عناصر قائمة الهاتف مخفية على الشاشات الكبيرة من اجل الريسبونسيف */
+.menu-checkbox,
+.menu-background,
+.close-menu,
+.open-menu {
+    display: none;
+}
+
+/* *************************** */
+    /* المحتوى الرئيسي والشريط العلوي */
+
+.main {
+    min-width: 0;
+    padding: 24px 30px 45px;
+}
+
+.header {
+    background: white;
+    border: 1px solid #e7ebf3;
+    border-radius: 15px;
+    padding: 14px 20px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 24px #253d5a08;
+}
+
+.header-right,
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+}
+
+.header-title h1 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.online {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #16895e;
+    background: #edfaf2;
+    padding: 7px 10px;
+    border-radius: 20px;
+    margin-right: 12px;
+    font-size: 11px;
+}
+
+.online-dot {
+    background: #28b679;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+}
+
+.header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: Arial, sans-serif;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e7ebf3;
+    border-radius: 10px;
+    color: #718099;
+    font-size: 22px;
+}
+
+.bell small {
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    background: #ed5a76;
+    color: white;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #e7ebf3;
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.profile-text strong,
+.profile-text small {
+    display: block;
+}
+
+.profile-text small {
+    color: #91a0b4;
+    font-size: 10px;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: 800;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../img/avatar-2.jpg);
+}
+
+/* /* *************************** */
+   /*  Grid الداخلي: تحديد أماكن أقسام Dashboard */
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+        "summary summary summary"
+        "activities transactions transactions"
+        "bills transactions transactions"
+        "budget chartArea payments"
+        "budget accounts payments";
+    gap: 16px;
+}
+
+/* *************************** */
+/* ربط أسماء الأقسام بخريطة   */
+.summary { grid-area: summary; }
+.activities { grid-area: activities; }
+.transactions { grid-area: transactions; }
+.bills{ 
+    grid-area: bills; }
+
+.budget{ grid-area: budget; }
+
+.chart-box{
+    grid-area: chartArea;}
+.payments{
+    grid-area: payments;
+}
+.accounts{
+    grid-area: accounts;
+}
+
+.activity-row{
+    background-color: #EFF6FF;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.activity-row1{
+    border-left: 5px solid #2B7FFF;
+}
+.activity-row2{
+    border-left: 5px solid #00C950;
+}
+
+/* *************************** */
+ /* شكل الصناديق وعناوينها - يستخدم في عدة أقسام */
+
+
+.box,
+.small-card {
+    background: #ffffff;
+    border: 1px solid #e7ebf2;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px #26395607;
+    min-width: 0;
+}
+
+.box {
+    padding: 20px;
+}
+
+.box-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 19px;
+}
+
+.box-title h2 {
+    font-size: 16px;
+}
+
+.box-title a {
+    font-size: 11px;
+    color: #8291a6;
+    white-space: nowrap;
+}
+
+.box-title a:hover {
+    color: #2563eb;
+}
+
+
+/* *************************** */
+   /* 7 - بطاقات الرصيد والمصروفات */
+
+.summary {
+    display: flex;
+    gap: 16px;
+}
+
+.small-card {
+    flex: 1;
+    padding: 23px 20px;
+    min-width: 0;
+}
+
+.small-card p {
+    color: #8494a9;
+    margin-bottom: 18px;
+}
+
+.card-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-bottom h2 {
+    font-family: "Cairo", Tahoma, sans-serif;
+    font-size: 26px;
+    line-height: 1.5;
+}
+
+.card-bottom h2 span,
+.bills-total h2 span {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.rate {
+    border-radius: 6px;
+    font-size: 11px;
+    padding: 4px 7px;
+    direction: ltr;
+    white-space: nowrap;
+}
+
+.rate-green { background: #e6f8ef; color: #139560; }
+.rate-red { background: #fff0f2; color: #dc5368; }
+
+
+/* *************************** */
+   /* 8 - قسم الأنشطة الحديثة */
+
+.activity-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.circle {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+.blue { background: #eaf1ff; color: #2a66d8; }
+.green { background: #e5f8ee; color: #20a06c; }
+.orange { background: #fff3df; color: #df961e; }
+.purple { background: #f3eaff; color: #985bd9; }
+.red { background: #ffedf0; color: #e35c77; }
+
+.activity-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.activity-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.activity-head strong {
+    font-size: 11px;
+}
+
+.label {
+    font-size: 10px;
+    padding: 3px 7px;
+    border-radius: 5px;
+}
+
+.activity-info p {
+    color: #7a8ba2;
+    font-size: 11px;
+    line-height: 1.9;
+    margin-top: 7px;
+}
+
+.activity-info small {
+    display: block;
+    color: #a0adbf;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.all-activities {
+    display: block;
+    text-align: center;
+    background: #f3f6fb;
+    padding: 10px;
+    border-radius: 9px;
+    color: #65748d;
+    font-size: 11px;
+    font-weight: 700;
+}
+/* *************************** */
+   /* جدول المعاملات */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+th {
+    padding: 12px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #f6f8fb;
+    color: #8594a9;
+}
+
+td {
+    padding: 13px 9px;
+    border-bottom: 1px solid #eef1f6;
+    color: #708098;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.person .circle {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+}
+
+.person strong,
+.person small {
+    display: block;
+}
+
+.person strong {
+    color: #293950;
+}
+
+.person small {
+    font-size: 10px;
+    color: #97a4b5;
+    margin-top: 3px;
+}
+
+.done,
+.pending {
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 10px;
+}
+
+.done { background: #e7f8ee; color: #159461; }
+.pending { background: #fff4d9; color: #aa7617; }
+
+.money {
+    font-weight: 700;
+    direction: ltr;
+    text-align: right;
+}
+
+.plus { color: #159b66 !important; }
+.minus { color: #e45167 !important; }
+
+   /* 10 - الفواتير الشهرية */
+
+.bills-total {
+    margin-bottom: 16px;
+}
+
+.bills-total h2 {
+    font-size: 23px;
+}
+
+.bills-total p {
+    color: #8c9aaf;
+    font-size: 11px;
+}
+
+.bills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.bill {
+    width: calc(50% - 4.5px);
+    border: 1px solid #edf0f5;
+    background: #f9fbfe;
+    padding: 11px;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+}
+
+.bill .circle {
+    width: 31px;
+    height: 31px;
+    margin-bottom: 4px;
+}
+
+.bill strong,
+.bill b {
+    font-size: 11px;
+}
+
+.bill small {
+    color: #95a2b4;
+    font-size: 10px;
+}
+
+
+/* *************************** */
+   /* 11 - نظرة عامة  الميزانية */
+
+.budget-numbers,
+.budget-line,
+.bar-text {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.budget-numbers {
+    padding: 13px;
+    background: #f7f9fc;
+    border-radius: 10px;
+}
+
+.budget-numbers small,
+.budget-numbers strong,
+.budget-line strong,
+.budget-line small {
+    display: block;
+}
+
+.budget-numbers small,
+.budget-line small {
+    color: #93a1b3;
+    font-size: 10px;
+}
+
+.budget-numbers strong {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.bar-text {
+    color: #77879f;
+    margin: 19px 0 8px;
+    font-size: 11px;
+}
+
+.progress {
+    background: #edf0f6;
+    height: 8px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* *************************** */
+
+/* العناصر الملونة داخل الميزانية */
+.progress div {
+    height: 100%;
+    border-radius: 20px;
+}
+
+.progress-blue { background: #4388eb; }
+.progress-purple { background: #9360e5; }
+.progress-red { background: #ed7181; }
+.progress-orange { background: #f0ae48; }
+.progress-green { background: #2cad82; }
+
+.budget-item {
+    padding: 14px 0;
+    border-bottom: 1px solid #eef1f6;
+}
+
+.budget-item:last-child {
+    border-bottom: none;
+}
+
+.budget-line {
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.budget-line strong {
+    font-size: 11px;
+}
+
+.budget-line div:last-child {
+    text-align: left;
+}
+
+
+/* *************************** */
+/* الرسم البياني */
+
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #75859a;
+    font-size: 11px;
+}
+
+.chart-legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chart-legend i {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+}
+
+.income-color,
+.income-column { background: #488aee; }
+.expense-color,
+.expense-column { background: #9980e8; }
+
+.chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 7px;
+    height: 205px;
+    padding-top: 16px;
+    background: repeating-linear-gradient(to top, #eaf0f7 0 1px, transparent 1px 48px);
+    border-bottom: 1px solid #eaf0f7;
+    margin-top: 12px;
+}
+
+.week {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 5px;
+    height: 155px;
+    width: 100%;
+}
+
+.columns span {
+    display: block;
+    width: 18px;
+    max-width: 35%;
+    border-radius: 5px 5px 0 0;
+}
+
+.week small {
+    font-size: 9px;
+    margin: 8px 0 4px;
+    white-space: nowrap;
+    color: #8898ab;
+}
+
+
+/* *************************** */
+
+   /*  وسائل الدفع */
+
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.credit-card {
+    color: white;
+    border-radius: 15px;
+    padding: 19px;
+    min-height: 162px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 19px #3558ac20;
+}
+
+.first-card { background: linear-gradient(120deg, #286edc, #424cc3); }
+.second-card { background: linear-gradient(120deg, #343b6f, #7253bc); }
+
+.card-top,
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-top strong {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.card-number {
+    font-size: 18px;
+    letter-spacing: 2px;
+    direction: ltr;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.card-details small,
+.card-details strong {
+    display: block;
+}
+
+.card-details small {
+    font-size: 10px;
+    opacity: .8;
+}
+
+.paypal {
+    background: #f6f8fd;
+    border: 1px solid #e8edf6;
+    border-radius: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+}
+
+.paypal strong,
+.paypal small {
+    display: block;
+}
+
+.paypal strong { color: #2669c9; }
+.paypal small { color: #8494a9; font-size: 10px; }
+
+
+
+/* *************************** */
+
+   /*  - ملخص الحساب */
+
+.account-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.account-row:last-child {
+    border-bottom: none;
+}
+
+.account-name {
+    flex: 1;
+    min-width: 0;
+}
+
+.account-name strong,
+.account-name small {
+    display: block;
+}
+
+.account-name strong,
+.account-money { font-size: 11px; }
+.account-name small { color: #94a0b3; font-size: 10px; margin-top: 3px; }
+.account-money { white-space: nowrap; }
+
+
+
+/* *************************** */
+/* *************************** */
+
+   /* ( Responsive للشاشات ) */
+
+
+@media (max-width: 1250px) {
+    .page {
+        grid-template-columns: 225px minmax(0, 1fr);
+    }
+
+    .main { padding: 18px; }
+
+    .dashboard {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "summary summary"
+            "activities bills"
+            "transactions transactions"
+            "budget chartArea"
+            "budget accounts"
+            "payments payments";
+    }
+
+    .payment-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .payment-list > * { flex: 1; min-width: 210px; }
+}
+
+
+@media (max-width: 950px) {
+    .page {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .open-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #e6ebf5;
+        background: white;
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        font-size: 22px;
+        color: #365278;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        display: block;
+        margin-right: auto;
+        font-size: 24px;
+        cursor: pointer;
+        color: #64748b;
+    }
+
+    .sidebar {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 270px;
+        max-width: 85vw;
+        z-index: 10;
+        box-shadow: -8px 0 30px #12243e17;
+        transform: translateX(110%);
+        transition: transform .3s;
+    }
+
+    .menu-checkbox:checked ~ .page .sidebar {
+        transform: translateX(0);
+    }
+
+    .menu-checkbox:checked ~ .menu-background {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: #10253c65;
+        z-index: 9;
+    }
+
+    .menu-checkbox {
+        position: fixed;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .main {
+        padding: 12px;
+    }
+
+    .header {
+        padding: 12px;
+    }
+
+    .header-logo,
+    .online,
+    .profile-text,
+    .header-button:first-child {
+        display: none;
+    }
+
+    .header-title h1 { font-size: 19px; }
+
+    .dashboard {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "summary"
+            "activities"
+            "transactions"
+            "bills"
+            "budget"
+            "chartArea"
+            "payments"
+            "accounts";
+        gap: 13px;
+    }
+
+    .summary { flex-direction: column; gap: 11px; }
+
+    .small-card { padding: 18px; }
+    .small-card p { margin-bottom: 8px; }
+    .card-bottom h2 { font-size: 24px; }
+
+    .box { padding: 16px; }
+
+    .payment-list { flex-direction: column; }
+    .payment-list > * { flex: auto; min-width: 0; }
+}
+
+
+@media (max-width: 370px) 
+{
+    .header-right,
+    .header-left { gap: 7px; }
+    .profile { padding: 3px; }
+    .avatar { width: 28px; height: 28px; }
+    .bill { padding: 8px; }
+    .account-money { font-size: 10px; }
+    .card-number { font-size: 15px; }
+}
